@@ -8,27 +8,22 @@ const io = socketIO(server);
 
 let users = [];
 
-// Serve arquivos estáticos (HTML, CSS)
 app.use(express.static('public'));
 
-// Quando um novo usuário se conecta
 io.on('connection', (socket) => {
     console.log('Novo usuário conectado');
 
-    // Recebe o nome do usuário logado
     socket.on('login', (username) => {
         users.push({ id: socket.id, username });
         io.emit('updateUserList', users);
     });
 
-    // Quando um usuário se desconecta
     socket.on('disconnect', () => {
         users = users.filter(user => user.id !== socket.id);
         io.emit('updateUserList', users);
         console.log('Usuário desconectado');
     });
 
-    // Recebe e retransmite mensagens do chat
     socket.on('sendMessage', (data) => {
         io.emit('newMessage', data);
     });
