@@ -1,19 +1,19 @@
-## Sobre o Projeto
+## About the Project
 
-Este projeto tem como objetivo fornecer um chat pessoal para você e seus amigos. Eu o utilizo para hospedar em redes onion, possibilitando conversas particulares e protegidas, prevenindo potenciais problemas com plataformas de comunicação convencionais. 
+This project aims to provide a personal chat for you and your friends. I use it to host on onion networks, enabling private and secure conversations while preventing potential issues with conventional communication platforms.
 
-Gostaria de deixar claro que este é um projeto de código aberto, disponibilizado para qualquer pessoa usar conforme desejar. No entanto, não me responsabilizo pelo uso inadequado ou ilegal do software. A responsabilidade pelo uso é exclusivamente do usuário.
+I would like to make it clear that this is an open-source project, available for anyone to use as they see fit. However, I am not responsible for any improper or illegal use of the software. The responsibility for its use lies solely with the user.
 
-Se desejar contribuir com o projeto ou tem dúvidas, sinta-se à vontade para entrar em contato comigo no Discord: `@untw0` :D
+If you wish to contribute to the project or have any questions, feel free to contact me on Discord: `@untw0` :D
 
-## Políticas de Uso
+## Usage Policies
 
-1. **Uso por Conta e Risco do Usuário:** Este projeto é fornecido "como está", sem qualquer tipo de garantia, expressa ou implícita. O autor não se responsabiliza por danos, perdas de dados, ou qualquer consequência que possa resultar do uso deste software.
+1. **Use at Your Own Risk:** This project is provided "as is," without any kind of warranty, express or implied. The author is not responsible for any damage, data loss, or consequences that may result from the use of this software.
 
-2. **Responsabilidade do Usuário:** Você é o único responsável por todas as atividades realizadas com o uso deste projeto. Não utilize o software para fins ilegais ou que violem os direitos de terceiros.
+2. **User Responsibility:** You are solely responsible for all activities conducted using this project. Do not use the software for illegal purposes or in ways that violate the rights of others.
 
-3. **Contribuições e Feedback:** Contribuições são bem-vindas, mas o autor reserva o direito de aceitar ou recusar qualquer mudança no projeto. Ao enviar sugestões ou correções, você concede ao autor permissão para usar, modificar e distribuir essas contribuições como parte do projeto.
+3. **Contributions and Feedback:** Contributions are welcome, but the author reserves the right to accept or reject any changes to the project. By submitting suggestions or corrections, you grant the author permission to use, modify, and distribute these contributions as part of the project.
 
-4. **Licença:** O projeto está disponível sob uma licença de código aberto (como a [MIT License](https://opensource.org/licenses/MIT)), que permite uso, modificação e distribuição, desde que os créditos sejam mantidos. Certifique-se de revisar a licença completa para mais detalhes.
+4. **License:** The project is available under an open-source license (such as the [MIT License](https://opensource.org/licenses/MIT)), which allows for use, modification, and distribution, provided that proper credit is given. Be sure to review the full license for more details.
 
-5. **Privacidade:** O autor não coleta dados pessoais através deste software. Se você decidir hospedar o chat em sua própria rede, certifique-se de seguir boas práticas para garantir a privacidade e segurança dos dados.
+5. **Privacy:** The author does not collect personal data through this software. If you decide to host the chat on your own network, be sure to follow best practices to ensure the privacy and security of the data.
