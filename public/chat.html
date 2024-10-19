@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat IRC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="irc-container">
+        <div class="irc-header">
+            <span>#chatbrasil</span> <span>bundatech</span> <span>#archlinux</span>
+        </div>
+        
+        <div class="chat-body">
+            <div class="irc-chat">
+                <div id="messages" class="messages"></div>
+            </div>
+            
+            <!-- Lista de usuários online -->
+            <div class="user-list">
+                <h4>On-line</h4>
+                <div id="onlineUsers" class="user-section"></div>
+            </div>
+        </div>
+
+        <div class="irc-footer">
+            <input type="text" id="messageInput" placeholder="Digite sua mensagem" autofocus />
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const username = localStorage.getItem('username') || 'Usuário Anônimo';
+
+        // Enviar nome de usuário ao conectar
+        socket.emit('login', username);
+
+        // Exibir lista de usuários online
+        socket.on('updateUserList', function(users) {
+            const onlineUsers = document.getElementById('onlineUsers');
+            onlineUsers.innerHTML = '';
+            users.forEach(user => {
+                const userElement = document.createElement('div');
+                userElement.textContent = `| @${user.username}`;
+                onlineUsers.appendChild(userElement);
+            });
+        });
+
+        // Enviar mensagem
+        function sendMessage() {
+            const input = document.getElementById("messageInput");
+            const message = input.value.trim();
+            
+            if (message) {
+                // Obter horário atual
+                const currentTime = new Date();
+                const hours = String(currentTime.getHours()).padStart(2, '0');
+                const minutes = String(currentTime.getMinutes()).padStart(2, '0');
+                const seconds = String(currentTime.getSeconds()).padStart(2, '0');
+                const timeString = `[${hours}:${minutes}:${seconds}]`;
+
+                const data = {
+                    time: timeString,
+                    username: username,
+                    message: message
+                };
+
+                socket.emit('sendMessage', data);
+                input.value = '';
+            }
+        }
+
+        // Exibir novas mensagens
+        socket.on('newMessage', function(data) {
+            const messageContainer = document.getElementById("messages");
+            const newMessage = document.createElement("div");
+            newMessage.classList.add("message");
+            newMessage.textContent = `${data.time} ${data.username} | ${data.message}`;
+            messageContainer.appendChild(newMessage);
+            
+            // Manter o scroll no final
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+        });
+
+        // Enviar mensagem ao pressionar Enter
+        document.getElementById("messageInput").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

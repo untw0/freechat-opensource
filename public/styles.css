@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: black;
+    color: #00ff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.irc-container {
+    width: 90%;
+    height: 90%;
+    border: 1px solid #007700;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.irc-header {
+    background-color: #005000;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.chat-body {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.irc-chat {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #001a00;
+    height: 100%;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    padding: 5px 0;
+    font-size: 14px;
+    color: #00ff00;
+}
+
+.user-list {
+    width: 200px;
+    padding: 10px;
+    background-color: #003300;
+    border-left: 1px solid #007700;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-list h4 {
+    color: #00ff00;
+    margin-bottom: 10px;
+}
+
+.user-list div {
+    padding: 5px 0;
+    color: #00ff00;
+}
+
+.irc-footer {
+    background-color: #005000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#messageInput {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: #001a00;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    background-color: #00ff00;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007700;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #00ff00;
+}
+
+.login-container input {
+    margin: 10px;
+    padding: 5px;
+    background-color: #001a00;
+    color: #00ff00;
+    border: none;
+}
